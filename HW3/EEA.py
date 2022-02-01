@@ -15,7 +15,7 @@ def EAA(a,b):
 
         #GCD, u and v assigned to the recursive EEA call
         d, u, v = EAA(r, a)
-        return d, v - (q) * u, u
+        return d, v - (q * u), u
 
 
 #Ints cleaned up
