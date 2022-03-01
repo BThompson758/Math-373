@@ -1,0 +1,12 @@
+HW7
+def modInverse(a, p):
+    return pow(a, -1, p)
+
+def fastPower(g, a, m):
+    result = 1
+    while a > 0:
+        if a % 2 == 1:
+            result = (result * g) % m
+        a = a // 2
+        g = (pow(g,2,m))
+    return result
