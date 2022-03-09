@@ -1,21 +1,9 @@
-HW7
-def modInverse(a, p):
-    return pow(a, -1, p)
+from math import isqrt
+from fastPower import fastPower
 
-def fastPower(g, a, m):
-    result = 1
-    while a > 0:
-        if a % 2 == 1:
-            result = (result * g) % m
-        a = a // 2
-        g = (pow(g,2,m))
-    return result
-
-def discreteLog(base, mod, result):
-    for x in range(1, mod):
-        if(pow(base, x, mod) == result):
-            print(x)
-            break
+m = 84298814015219
+g = 2
+h = 3
 
 def shanks(g,h,m):
 
@@ -39,9 +27,19 @@ def shanks(g,h,m):
          #Compares giant to each value in List 1
          for z in range(n):
              if(giant == naive[z]):
-                 sol = (z*(y*n))
+                 sol = (z+(y*n))
              
     if(sol == 0):
         return "undefined"
     else:
         return sol
+
+print(shanks(g,h,m))
+
+
+
+
+
+
+
+

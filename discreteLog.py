@@ -4,5 +4,4 @@ def discreteLog(base, mod, result):
             print(x)
             break
 
-discreteLog(14, 23, 22)
-discreteLog(15, 23, 8)
+discreteLog(2, 1373, 893)
