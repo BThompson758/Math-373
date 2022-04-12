@@ -12,5 +12,5 @@ def isPrime(num):
     else:
         print(num, "is not prime")
             
-isPrime(43)
+
 

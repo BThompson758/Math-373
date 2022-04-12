@@ -19,8 +19,8 @@ def EEA(a,b):
 
 
 #Ints cleaned up
-a = 19157632841654891
-b = 39493517444969867
+a = 1722971
+b = 1711330
 d, u, v = EEA(a,b)
 
 #Prints & labels returned values
