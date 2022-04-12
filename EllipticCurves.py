@@ -21,7 +21,9 @@ def elliptic(x1, y1, x2, y2, mod, a, b):
             #Splits slope so inverse of denominator is possible
             slopeNumerator = (3*pow(x,2)+a) % mod
             slopeDenominator = (2*y) % mod
-
+            if(slopeDenominator == 0):
+                return print("Slope is Vertical")
+            
             #Inverse of denominator
             inv = pow(int(slopeDenominator),-1,mod)
 
@@ -32,10 +34,14 @@ def elliptic(x1, y1, x2, y2, mod, a, b):
         else:
             #Checks P2 for existence on E
             if(polynomial(x2,y2,a,b,mod) == true):
-                slope = (((y2-y1) % mod)/((x2-x1) % mod))
+                slopeNumerator = ((y2-y1) % mod)
+                slopeDenominator = ((x2-x1) % mod)
+                if(slopeDenominator == 0):
+                    return print("Slope is Vertical")
+                slope = slopeNumerator/slopeDenominator
                 print(f'slope = {slope}')
             else:
-                return "P2 does not exist on curve E"
+                return print("P2 does not exist on curve E")
 
         #Equations for x3 and y3
         x3 = (pow(slope,2) - x1 - x2) % mod
@@ -43,10 +49,10 @@ def elliptic(x1, y1, x2, y2, mod, a, b):
         print(f'(x3,y3) = ({x3},{y3})')
         return x3,y3
     else:
-        return "P1 does not exist on curve E"
+        return print("P1 does not exist on curve E")
 
-x1,y1 = 3,9
-x2,y2 = 3,9
+x1,y1 = 1,2
+x2,y2 = 1,-2
 
-elliptic(x1,y1,x2,y2,19,5,1)
+elliptic(x1,y1,x2,y2,100,2,1)
 
