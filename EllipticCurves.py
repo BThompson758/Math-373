@@ -36,9 +36,10 @@ def elliptic(x1, y1, x2, y2, mod, a, b):
             if(polynomial(x2,y2,a,b,mod) == true):
                 slopeNumerator = ((y2-y1) % mod)
                 slopeDenominator = ((x2-x1) % mod)
+                inv = pow(int(slopeDenominator),-1,mod)
                 if(slopeDenominator == 0):
                     return print("Slope is Vertical")
-                slope = slopeNumerator/slopeDenominator
+                slope = (inv * slopeNumerator) % mod
                 print(f'slope = {slope}')
             else:
                 return print("P2 does not exist on curve E")
@@ -51,8 +52,8 @@ def elliptic(x1, y1, x2, y2, mod, a, b):
     else:
         return print("P1 does not exist on curve E")
 
-x1,y1 = 1,2
-x2,y2 = 1,-2
+x1,y1 = 8,1
+x2,y2 = 5,12
 
-elliptic(x1,y1,x2,y2,100,2,1)
+elliptic(x1,y1,x2,y2,13,1,1)
 
