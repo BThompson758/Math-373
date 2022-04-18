@@ -1,3 +1,6 @@
+#Robert Thompson
+#4/18/2022
+#For MATH 373
 import numpy as np
 
 #3x^5+0x^4+0x^3+1x^2+0x,+1
